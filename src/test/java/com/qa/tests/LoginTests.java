@@ -24,10 +24,11 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test(priority=2)
-    public  void invalidUserName(){
+
+    @Test(priority=1)
+    public  void invalidPassword(){
         login.enterUserName("invalidusername");
-        login.enterPassword("secret_sauce");
+        login.enterPassword("wrongPassword");
         login.ClickLogin();
         String ActualerrorMessage = login.getErrorMessage();
         String expecteMessage = "Username and password do not match any user in this service.";
@@ -35,10 +36,11 @@ public class LoginTests extends BaseTest {
         Assert.assertEquals(ActualerrorMessage,expecteMessage);
 
     }
-    @Test(priority=1)
-    public  void invalidPassword(){
+
+    @Test(priority=2)
+    public  void invalidUserName(){
         login.enterUserName("invalidusername");
-        login.enterPassword("wrongPassword");
+        login.enterPassword("secret_sauce");
         login.ClickLogin();
         String ActualerrorMessage = login.getErrorMessage();
         String expecteMessage = "Username and password do not match any user in this service.";
