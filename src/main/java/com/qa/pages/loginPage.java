@@ -2,9 +2,17 @@ package com.qa.pages;
 
 import com.qa.BaseTest;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-public class loginPage extends BaseTest {
+public class loginPage  {
+
+    BaseTest base;
+    public loginPage(){
+        base = new BaseTest();
+        PageFactory.initElements(new AppiumFieldDecorator(base.getDriver()),this);
+    }
 
     @AndroidFindBy(accessibility = "test-Username")
     private WebElement userName_txt;
@@ -18,12 +26,12 @@ public class loginPage extends BaseTest {
 
 
     public loginPage enterUserName(String userName) {
-        Sendkeys(userName_txt, userName);
+        base.Sendkeys(userName_txt, userName);
         return this;
     }
 
     public loginPage enterPassword(String password) {
-        Sendkeys(Password_txt, password);
+        base.Sendkeys(Password_txt, password);
         return this;
     }
     public ProductsPage ClickLogin () {
@@ -31,7 +39,7 @@ public class loginPage extends BaseTest {
         return new ProductsPage();
     }
     public String getErrorMessage () {
-        return getAttribute(error_info,"text");
+        return base.getAttribute(error_info,"text");
     }
 
 }

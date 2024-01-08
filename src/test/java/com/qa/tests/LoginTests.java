@@ -6,15 +6,30 @@ import com.qa.pages.loginPage;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 
-public class LoginTests extends BaseTest {
+public class LoginTests  {
 
     loginPage login;
     ProductsPage productsPage;
+    BaseTest base;
+
+    @BeforeClass
+    @Parameters({"platformName","platformVersion","deviceName"})
+    public void beforeClass(String platformName,String platformVersion,String deviceName) throws MalformedURLException {
+        base = new BaseTest();
+        base.InitializeDriver(platformName,platformVersion,deviceName);
+
+    }
+
+    @AfterClass
+    public void afterClass()
+    {
+       base.quitDriver();
+    }
 
     @BeforeMethod
     public  void beforeMethod(Method m)

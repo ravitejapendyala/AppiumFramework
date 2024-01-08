@@ -30,19 +30,27 @@ public class BaseTest {
 
     public BaseTest(){
 
-        PageFactory.initElements(new AppiumFieldDecorator(driver),this);
+
+    }
+    public void setDriver(AppiumDriver driver)
+    {
+        this.driver=driver;
+    }
+    public AppiumDriver getDriver()
+    {
+        return driver;
     }
 
-    @AfterTest
-    public void AfterTest(){
+
+    public void quitDriver(){
 
         driver.quit();
 
     }
 
-    @Parameters({"platformName","platformVersion","deviceName"})
-    @BeforeTest
-    public void BeforeTest(String platformName,String platformVersion,String deviceName) throws MalformedURLException {
+
+    //@BeforeTest
+    public void InitializeDriver(String platformName,String platformVersion,String deviceName) throws MalformedURLException {
 
         try{
 
