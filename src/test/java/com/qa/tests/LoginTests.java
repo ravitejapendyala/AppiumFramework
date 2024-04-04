@@ -36,7 +36,6 @@ public class LoginTests  {
     {
         login = new loginPage();
         System.out.println("\n" +"********* Starting test : "+m.getName()+ "*********" + "\n" );
-
     }
 
 
