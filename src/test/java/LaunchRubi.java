@@ -27,7 +27,7 @@ String appUrl = System.getProperty("user.dir")+ File.separator+"src"+ File.separ
         Thread.sleep(5000);
         driver.findElement(By.className("android.view.ViewGroup")).click();
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         //cdwmobileqa
 //Quality2
         driver.findElement(By.xpath("//android.widget.EditText[@hint='USERNAME']")).sendKeys("cdwmobileqa");
