@@ -33,7 +33,7 @@ String appUrl = System.getProperty("user.dir")+ File.separator+"src"+ File.separ
         driver.findElement(By.xpath("//android.widget.EditText[@hint='USERNAME']")).sendKeys("cdwmobileqa");
         driver.findElement(By.xpath("//android.widget.EditText[@hint='PASSWORD']")).sendKeys("blu");
         driver.findElement(By.className("android.widget.Button")).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 
 
     }
