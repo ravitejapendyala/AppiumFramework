@@ -28,10 +28,10 @@ public class AutomateTesla {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",element);
 
 
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         element = driver.findElement(AppiumBy.xpath("//span[text()='Interior']"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",element);
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         element = driver.findElement(AppiumBy.xpath("//h2[text()='Charging']"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);",element);
